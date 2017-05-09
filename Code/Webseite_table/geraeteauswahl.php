@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<?php
-	include 'abc.php';
-?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
       <meta charset="utf-8" />
@@ -10,14 +7,15 @@
 	<!-- BOOTSTRAP STYLES-->
     <link href="bootstrap.css" rel="stylesheet" />
 	
-	    <script src="jQuery.js"></script>
-		<script src="dataTables_min.js"></script>
-		<link rel="stylesheet" type="text/css" href="dataTables_min.css">
-		<script src="TestTable.js"></script>
+	<!-- JAVASCRIPT FOR DATATABLES-->
+	<script src="jQuery.js"></script>
+	<script src="dataTables_min.js"></script>
+	<script src="TestTable.js"></script>
     
     <!-- CUSTOM STYLES-->
     <link href="custom_nacht.css" rel="stylesheet" title="nacht" type="text/css"/>
 	<link href="custom_tag.css" rel="stylesheet" title="tag" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="dataTables_min.css">
 	
 	  <script type="text/javascript">
     // *** TO BE CUSTOMISED ***
@@ -115,7 +113,7 @@ function get_cookie ( cookie_name )
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                   <li class="topmenu">
-					<a href="webseite_css_switch.html">Home</a>
+					<a href="webseite_css_switch.php">Home</a>
 				  </li>
 				  <li class="topmenu">
 					<a href="geraeteauswahl.html">Geräteauswahl</a>
@@ -160,54 +158,47 @@ function get_cookie ( cookie_name )
                     </div>
                 </div>              
                  <!-- /. ROW  -->
-              
-                
-                  <script src="jQuery.js"></script>
-<script src="dataTables_min.js"></script>
-<link rel="stylesheet" type="text/css" href="dataTables_min.css">
-<script src="TestTable.js"></script>
-
-<?php
-	$sql = "select id, sname, fname, kname from labor,standort,firma,kategorie where standort_sid=sid and firma_fid=fid and kategorie_kid=kid";
-	
-	
-	mysql_connect("localhost","root","") or die(mysql_error());	//Datenbankverbindungsaufbau
-	mysql_select_db("labordatenbank") or die("labor");	//Datenbank auswählen
-	
-	$result = mysql_query($sql);	// Select Befehl ausführen
-	
-	// Namen der Spalten als 1. Zeile der Tabelle anzeigen
-	echo '<table id="example" class="display" cellspacing="0" width="100%">';
-	echo "<thead><tr>";
-	echo "<th>ID</th>";
-	echo "<th>Standort</th>";
-	echo "<th>Firma</th>";
-	echo "<th>Kategorie</th>";
-	echo "</tr></thead>";
-	
-	echo "<tfoot><tr>";
-	echo "<th>ID</th>";
-	echo "<th>Standort</th>";
-	echo "<th>Firma</th>";
-	echo "<th>Kategorie</th>";
-	echo "</tr></tfoot>";
-	
-	echo "<tbody>";
-	
-	while ($row=mysql_fetch_array($result))	// wird so oft ausgeführt, wie Einträge in der Datenbank sind
-	{
-		// aktuellen Eintrag als Zeile der Tabelle anzeigen
-		echo "<tr>";
-		echo "<td>". $row["id"] . "</td>";
-		echo "<td>". $row["sname"] . "</td>";
-		echo "<td>". $row["fname"] . "</td>";
-		echo "<td>". $row["kname"] . "</td>";
-		echo "</tr>";
-	}
-	
-	echo "</tbody></table>";	// Tabelle anzeigen
-?>
-                 
+					<?php
+						$sql = "select id, sname, fname, kname from labor,standort,firma,kategorie where standort_sid=sid and firma_fid=fid and kategorie_kid=kid";
+						
+						
+						mysql_connect("localhost","root","") or die(mysql_error());	//Datenbankverbindungsaufbau
+						mysql_select_db("labordatenbank") or die("labor");	//Datenbank auswählen
+						
+						$result = mysql_query($sql);	// Select Befehl ausführen
+						
+						// Namen der Spalten als 1. Zeile der Tabelle anzeigen
+						echo '<table id="example" class="display" cellspacing="0" width="100%">';
+						echo "<thead><tr>";
+						echo "<th>ID</th>";
+						echo "<th>Standort</th>";
+						echo "<th>Firma</th>";
+						echo "<th>Kategorie</th>";
+						echo "</tr></thead>";
+						
+						echo "<tfoot><tr>";
+						echo "<th>ID</th>";
+						echo "<th>Standort</th>";
+						echo "<th>Firma</th>";
+						echo "<th>Kategorie</th>";
+						echo "</tr></tfoot>";
+						
+						echo "<tbody>";
+						
+						while ($row=mysql_fetch_array($result))	// wird so oft ausgeführt, wie Einträge in der Datenbank sind
+						{
+							// aktuellen Eintrag als Zeile der Tabelle anzeigen
+							echo "<tr>";
+							echo "<td>". $row["id"] . "</td>";
+							echo "<td>". $row["sname"] . "</td>";
+							echo "<td>". $row["fname"] . "</td>";
+							echo "<td>". $row["kname"] . "</td>";
+							echo "</tr>";
+						}
+						
+						echo "</tbody></table>";	// Tabelle anzeigen
+					?>
+    
                  
 			</div>
              <!-- /. PAGE INNER  -->
