@@ -1,0 +1,288 @@
+/*=============================================================
+    Authour URI: www.binarycart.com
+    License: Commons Attribution 3.0
+
+    http://creativecommons.org/licenses/by/3.0/
+
+    100% To use For Personal And Commercial Use.
+    IN EXCHANGE JUST GIVE US CREDITS AND TELL YOUR FRIENDS ABOUT US
+   
+    ========================================================  */
+/*==============================================
+    GENERAL  STYLES    
+  =============================================*/
+#body 
+{
+    font-family: 'Open Sans', sans-serif;
+    line-height:30px;
+}
+ #wrapper 
+{
+    width: 100%;
+    margin-top:50px;
+}
+
+#page-wrapper 
+{
+    padding: 15px 15px;
+    min-height: 600px;
+    background:#9acd22;
+   
+}
+
+#page-inner 
+{
+    width:100%;
+    margin:10px 20px 10px 0px;
+    background-color:#fff!important;
+    padding:10px;
+    min-height:1050px;
+}
+/*Setzt Bilder in den Kästen nach unten*/
+.pad-top 
+{
+    padding-top:15px;
+}
+/*==============================================
+    MENU STYLES    
+  ==============================================*/
+.navbar-inverse 	/*Oberer Teil der Webseite*/
+{
+background-color: #9acd22; /*Hintergrundfarbe des oberen Teiles(jetzt blau)*/
+border-color: #000000; /*Umrandung des oberen Teils mit Logout (jetzt schwarz)*/
+min-height: 80px;
+}
+
+.logout-spn /*Logout Schrift Styling*/
+{
+    float:right;
+    
+    font-size:25px;
+    font-weight:800;
+    margin:20px;
+    margin: 10px 25px 10px 50px;
+}
+.logout-spn a /*Dient dazu, dass der Logout Text nicht mehr unterstrichen wird*/
+{
+	text-decoration:none;
+}
+.logout_color
+{
+	color: #000000;
+}
+
+    
+/*==============================================
+    FOOTER STYLES     
+    =============================================*/
+.footer 
+{
+    background-color:#9acd22;
+    width:100%;
+  
+    padding:20px 50px 20px 50px;
+    padding-left:20px;
+}
+.col-lg-12 /*c2017 Bayer Mathias | Design by: am Schluss der Webseite*/
+{
+	color: #000000;
+}
+.link-unten
+{
+	color: #000000;
+}
+
+/*==============================================
+    Left side of the Webpage    
+    =============================================*/
+.navbar-side 
+{
+	border:none;
+	background-color: #fff;
+	
+}
+.sidebar-collapse .nav 
+{
+	padding:0;			/*Setzt Menü auf linker Seite von links hinein*/
+    padding-top:0px;	/*Setzt Menü auf linker Seite um 50px von oben herab*/
+}
+/*Menü auf der linken Seite ohne Maus drüber fahren*/
+.sidebar-collapse > .nav > li > a 
+{
+	padding:15px 10px; /*1. verstellt Höher der einzelnen Menü Punkte 2. die Breite*/
+    color: #000000;
+	font-weight: 900;	/*Dicke der Schrift*/
+	font-size: 16px;	/*Größe der Schrift*/
+}
+
+/*Farbe der Trennlinie zwischen einzelnen Punkten*/
+.sidebar-collapse > .nav > li 
+{
+	border-bottom:1px solid #000000;
+}
+/*Menü wird beim drüber fahren orange*/
+.sidebar-collapse .nav > li > a:hover,
+.sidebar-collapse .nav > li > a:focus 
+{
+	background:#000000;
+	color: #9acd22;
+	outline:0;
+}
+
+/*==============================================
+    Right side of the Webpage    
+    =============================================*/
+.navbar-right-side 
+{
+	border:none;
+	background-color: #fff;
+	
+}
+.sidebar-collapse-right .nav 
+{
+	margin:0 0 0 1642px;
+    padding-top:0px;	/*Setzt Menü auf linker Seite um 50px von oben herab*/
+} 
+.sidebar-collapse-right > .nav > li > a 
+{
+	padding:15px 130px; /*1. verstellt Höher der einzelnen Menü Punkte 2. die Breite*/
+    color: #ff7f00;
+	font-weight: 900;	/*Dicke der Schrift*/
+	font-size: 16px;	/*Größe der Schrift*/
+}
+
+/*Farbe der Trennlinie zwischen einzelnen Punkten*/
+.sidebar-collapse-right > .nav > li 
+{
+	border-bottom:1px solid #000000;
+}
+/*Menü wird beim drüber fahren orange*/
+.sidebar-collapse-right .nav > li > a:hover,
+.sidebar-collapse-right .nav > li > a:focus 
+{
+	background:#000000;
+	color: #9acd22;
+	outline:0;
+}
+
+
+/*==============================================
+    DASHBOARD STYLES    
+    =============================================*/
+.div-square 
+{
+    padding:5px;
+    border:3px double #000000;
+    -webkit-border-radius:8px;
+   -moz-border-radius:8px;
+    border-radius:8px;
+    margin:5px;
+	background: #9acd22;
+
+}
+
+.div-square> a,.div-square> a:hover 
+{
+    color:#000000;
+    text-decoration:none;
+}
+
+/*==============================================
+    MEDIA QUERIES     
+    =============================================*/
+ 
+ @media(min-width:768px) 
+{
+     #page-wrapper
+	 {
+        margin:100px 260px 0 260px;
+        padding: 15px 30px;
+        min-height: 1050px;
+		
+    }
+	
+	
+    .navbar-side 
+	{
+        z-index: 1;
+        position: absolute;
+        width: 260px;	/*Breite des Menü auf linker Seite*/
+    }
+
+	 .navbar-right-side 
+	{
+        position: absolute;
+        width: 260px;
+    } 
+ 
+}
+
+/*==============================================
+    Dropdown Menu in linker Spalte  
+    =============================================*/
+ .topmenu a
+{
+  text-align:center;
+} 
+
+.topmenu ul
+{
+  display:none;
+}
+
+.topmenu a
+{
+  padding:1px 5px;
+  border:1px solid #000000;
+  border-collapse:collapse;
+  color:#000000;
+  font-weight:bold;
+  text-decoration:none;
+  background-color:#9acd22;
+  margin:0;  
+}
+
+.submenu a:hover
+{
+  color:#9acd22; 
+  background-color:#000000;
+  font-size:16px;
+  position:relative;
+  clear:both; /* special IE6*/
+}
+
+
+.topmenu:hover ul 
+{
+  display:block;  
+  z-index:500;
+}
+
+/*==============================================
+    Button Tag und Nacht  
+    =============================================*/
+.button-tag
+{
+	width: 260px;
+	font: 14px Helvecita;
+	font-size: 20px;
+	font-weight:bold;
+	border: 1px solid #000000;
+	background: #9acd22;
+	color: #000000;
+	line-height: 130%;
+	padding: 2px;
+}
+
+.button-nacht
+{
+	width: 260px;
+	font: 14px Helvecita;
+	font-size: 20px;
+	font-weight:bold;
+	border: 1px solid #ff7f00;
+	background: #000000;
+	color: #ff7f00;
+	line-height: 130%;
+	padding: 2px;
+}
