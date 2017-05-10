@@ -1,0 +1,70 @@
+CREATE TABLE kategorie (
+  kid INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  kname VARCHAR(255) NULL,
+  PRIMARY KEY(kid)
+)
+AUTO_INCREMENT = 1;
+
+CREATE TABLE raum (
+  rid INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  rname VARCHAR(255) NULL,
+  PRIMARY KEY(rid)
+)
+AUTO_INCREMENT = 1;
+
+CREATE TABLE kasten (
+  kid INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  kname VARCHAR(255) NULL,
+  PRIMARY KEY(kid)
+);
+
+CREATE TABLE fach (
+  fachid INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  fachname VARCHAR(255) NULL,
+  PRIMARY KEY(fachid)
+);
+
+CREATE TABLE firma (
+  fid INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  fname VARCHAR(255) NULL,
+  PRIMARY KEY(fid)
+)
+AUTO_INCREMENT = 1;
+
+CREATE TABLE labor (
+  id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  fach_fachid INTEGER UNSIGNED NOT NULL,
+  kasten_kid INTEGER UNSIGNED NOT NULL,
+  raum_rid INTEGER UNSIGNED NOT NULL,
+  firma_fid INTEGER UNSIGNED NOT NULL,
+  kategorie_kid INTEGER UNSIGNED NOT NULL,
+  PRIMARY KEY(id),
+  INDEX labor_FKIndex1(kategorie_kid),
+  INDEX labor_FKIndex2(firma_fid),
+  INDEX labor_FKIndex3(raum_rid),
+  INDEX labor_FKIndex4(kasten_kid),
+  INDEX labor_FKIndex5(fach_fachid),
+  FOREIGN KEY(kategorie_kid)
+    REFERENCES kategorie(kid)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(firma_fid)
+    REFERENCES firma(fid)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(raum_rid)
+    REFERENCES raum(rid)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(kasten_kid)
+    REFERENCES kasten(kid)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(fach_fachid)
+    REFERENCES fach(fachid)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION
+)
+AUTO_INCREMENT = 1;
+
+
