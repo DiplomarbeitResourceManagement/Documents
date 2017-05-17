@@ -1,0 +1,46 @@
+CREATE TABLE standort (
+  sid INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  sname VARCHAR(255) NULL,
+  PRIMARY KEY(sid)
+)
+AUTO_INCREMENT = 1;
+
+CREATE TABLE kategorie (
+  kid INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  kname VARCHAR(255) NULL,
+  PRIMARY KEY(kid)
+)
+AUTO_INCREMENT = 1;
+
+CREATE TABLE firma (
+  fid INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  fname VARCHAR(255) NULL,
+  PRIMARY KEY(fid)
+)
+AUTO_INCREMENT = 1;
+
+CREATE TABLE labor (
+  id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  standort_sid INTEGER UNSIGNED NOT NULL,
+  firma_fid INTEGER UNSIGNED NOT NULL,
+  kategorie_kid INTEGER UNSIGNED NOT NULL,
+  PRIMARY KEY(id),
+  INDEX labor_FKIndex1(kategorie_kid),
+  INDEX labor_FKIndex2(firma_fid),
+  INDEX labor_FKIndex3(standort_sid),
+  FOREIGN KEY(kategorie_kid)
+    REFERENCES kategorie(kid)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(firma_fid)
+    REFERENCES firma(fid)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(standort_sid)
+    REFERENCES standort(sid)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION
+)
+AUTO_INCREMENT = 1;
+
+
