@@ -1,0 +1,24 @@
+DROP DATABASE IF EXISTS sample;
+SHOW WARNINGS;
+CREATE DATABASE IF NOT EXISTS sample
+  DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+SHOW WARNINGS;
+USE sample;
+SHOW WARNINGS;
+
+DROP TABLE IF EXISTS routes;
+SHOW WARNINGS;
+CREATE TABLE IF NOT EXISTS routes (
+  id INT2,
+  name VARCHAR(10) BINARY,
+  color VARCHAR(10) BINARY,
+  colorhex VARCHAR(10) BINARY,
+  PRIMARY KEY (id)
+);
+SHOW WARNINGS;
+INSERT INTO routes (id, name, color, colorhex) VALUES
+(1, '404', 'cyan', '#00FFFF'),
+(2, '403', 'grün', '#008000'),
+(3, 'U47', 'kaki', '#FF69B4'),
+(4, 'U41', 'gelb', '#FF69B4');
+SHOW WARNINGS;
