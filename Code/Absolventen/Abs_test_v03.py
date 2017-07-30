@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import csv
+import codecs
 
 def unique_list(l):
   x = []
@@ -10,7 +11,7 @@ def unique_list(l):
   return x
   
 fp=open("L:\GitHub\Documents\Code\Absolventen\Absolventen_all.csv", "r")
-fp1=open("L:\GitHub\Documents\Code\Absolventen\Absolventen_all.sql", "w+")
+fp1=codecs.open("L:\GitHub\Documents\Code\Absolventen\Absolventen_all_format.sql", "w+", encoding = 'utf8')	# sql file in utf8 speichern
 
 reader=csv.reader(fp, delimiter=';')
 
